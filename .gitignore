@@ -5,6 +5,5 @@ __pycache__
 *.pyc
 *.pyo
 *.pyd
-*.sqlite3
 instance
 *.log
