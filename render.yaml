@@ -21,7 +21,4 @@ services:
     envVars:
       - key: IS_PERSISTENT
         value: "true"
-    disk:
-      name: chroma-data
-      mountPath: /chroma/chroma-data
-      sizeGB: 1
+   
