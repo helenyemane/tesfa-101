@@ -7,7 +7,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y gcc
 
 # Copy requirements
-COPY ./adk-agents/requirements.txt .
+COPY ./adk-agent/requirements.txt .
 
 # Install Python deps
 RUN pip install --no-cache-dir -r requirements.txt
