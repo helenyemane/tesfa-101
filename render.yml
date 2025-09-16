@@ -1,0 +1,27 @@
+services:
+  # Agent service
+  - type: web
+    name: tesfa-agent
+    env: docker
+    dockerfilePath: ./adk-agent/Dockerfile
+    plan: free
+    region: oregon
+    envVars:
+      - key: GOOGLE_API_KEY
+        value: "AIzaSyAYbbs4_bHn4vyB9dGpgdnU6CXQS0ZZPFo"
+      - key: PORT
+        value: 8000
+  # Chroma service
+  - type: web
+    name: tesfa-chroma
+    env: docker
+    dockerfilePath: ./chroma-server/Dockerfile
+    plan: free
+    region: oregon
+    envVars:
+      - key: IS_PERSISTENT
+        value: "true"
+    disk:
+      name: chroma-data
+      mountPath: /chroma/chroma-data
+      sizeGB: 1
